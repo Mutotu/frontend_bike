@@ -4,7 +4,19 @@
 ul {
   list-style-type: none;
   background-color: rgb(129, 245, 245);
-  border: thick 2px;
+  border: solid 2px;
   width: 60rem;
   border-radius: 20px;
+}
+
+body {
+  background: url("https://www.themotorental.com/wp-content/uploads/2020/04/moto-rental-in-spain-1.png");
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: auto;
+  background-position: center;
+  background-size: 40rem;
+  background-color: azure;
+  background-attachment: local;
+  background-position: 28rem 3rem;
 }

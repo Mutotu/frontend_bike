@@ -1,3 +1,4 @@
+import "../cssFiles/AllBikesPage.css";
 import axios from "axios";
 import { useState, useEffect, useContext } from "react";
 import { AppContext } from "../../context/AppContext";
@@ -37,7 +38,7 @@ const AllBikes = (props) => {
   }, []);
 
   return (
-    <div>
+    <div className='allBikes'>
       {bikes.map((item, i) => {
         return (
           <ul key={item.id}>
@@ -52,11 +53,10 @@ const AllBikes = (props) => {
                   <h4>Model: {item.model}</h4>
                   <h4>Daily Price ${item.price}</h4>
                   <h4>Year: {item.year}</h4>
-                  <h4>Photo: {item.photo}</h4>
+                  <img src={item.photo} alt={item.model}></img>
                   <a
                     href={`mailto: ${owner.email}`}
                     onClick={() => {
-                      // console.log(owner);
                       get_user(item.user_id);
                     }}
                   >

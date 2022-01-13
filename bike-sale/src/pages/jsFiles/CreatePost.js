@@ -116,6 +116,7 @@ const CreatePost = (props) => {
 
         <div>
           <input
+            className='submit-bn'
             type='submit'
             value='Submit'
             disabled={
@@ -131,3 +132,4 @@ const CreatePost = (props) => {
 };
 
 export default CreatePost;
+////////////////

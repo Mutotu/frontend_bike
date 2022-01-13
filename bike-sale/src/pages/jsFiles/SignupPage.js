@@ -1,3 +1,4 @@
+import "../cssFiles/Signup.css";
 import axios from "axios";
 import { useState, useEffect, useContext } from "react";
 import { AppContext } from "../../context/AppContext";
@@ -38,12 +39,12 @@ const SignupPage = (props) => {
     setError("errorRemove");
   };
   return (
-    <div>
+    <div className='signup'>
       <h2>Sign up for an accout!</h2>
 
       {error && <div className={`${error} errorDisplay`}>{error}</div>}
 
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className='signup-form'>
         <div>
           <label htmlFor='signup-fn'>First Name:</label>
           <input

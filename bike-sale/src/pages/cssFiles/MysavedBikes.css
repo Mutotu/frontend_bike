@@ -1,6 +1,41 @@
 .commentForm > button {
   background-color: rgb(116, 146, 146);
 }
+
+.card-rent > button {
+  margin-top: -1rem;
+  margin-bottom: 3rem;
+}
+
+.card-rent {
+  margin: 0 20rem;
+  width: auto 250px;
+}
+
 .commentForm {
-  position: relative;
+  margin-top: 30rem;
+}
+.commentForm > div > input {
+  display: table;
+  float: center;
+  margin-top: 1rem;
+  font-weight: bolder;
+}
+.commentForm > div > label {
+  display: inline-block;
+  float: center;
+  color: rgb(180, 31, 31);
+  background-color: rgb(235, 235, 235);
+
+  text-align: right;
+  margin-right: 8rem;
+}
+
+.commentForm {
+  margin-top: -3rem;
+  font-weight: bolder;
+}
+
+.commentForm > button {
+  background-color: rgb(7, 250, 250);
 }

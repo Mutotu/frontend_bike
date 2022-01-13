@@ -1,12 +1,12 @@
 .myForm {
   margin-top: 30rem;
 }
-.myForm > div > input {
+.signup-form > div > input {
   display: inline-block;
   float: center;
   margin-top: 1rem;
 }
-.myForm > div > label {
+.signup-form > div > label {
   display: inline-block;
   float: center;
   clear: left;
@@ -15,6 +15,6 @@
   margin-right: 5rem;
 }
 
-body {
-  background-color: azure;
+.signup {
+  margin: -10rem;
 }

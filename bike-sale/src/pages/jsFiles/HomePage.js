@@ -37,7 +37,7 @@ const HomePage = (props) => {
                     <h4>Description:{item.description}</h4>
                     <h4>Make: {item.make}</h4>
                     <h4>Model:{item.model}</h4>
-                    <h4>Photo:{item.photo}</h4>
+                    <img src={item.photo} alt={item.name}></img>
                   </div>
                 </div>
               </li>
@@ -121,11 +121,12 @@ const HomePage = (props) => {
             return (
               <div key={item.id} className='home-card'>
                 {/* bring b ack the img tag */}
-                <p>Photo: {item.photo}</p>
+                <img src={item.photo} alt={item.name}></img>
                 <h4>Make: {item.make}</h4>
                 <h4>Model: {item.model}</h4>
                 <h4>Year: {item.year}</h4>
-                <h5>Price: ${item.price}</h5>
+                <h5>Daily price: ${item.price}</h5>
+                <h6>Description: {item.description}</h6>
                 <button
                   className='delete-bn'
                   onClick={() => {
@@ -171,7 +172,7 @@ const HomePage = (props) => {
         {localStorage.getItem("userId") ? (
           <div>
             {/* <div>Welcome {user.data.user.username}</div> */}
-            <h3>Welcome </h3>
+            <h3 className='welcome'>Welcome </h3>
             {posts.length > 0 ? (
               display()
             ) : (
