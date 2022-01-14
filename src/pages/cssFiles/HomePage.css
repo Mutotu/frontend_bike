@@ -46,5 +46,10 @@ h2 {
 }
 
 .home-card > img {
-  width: auto;
+}
+
+.noUser-form {
+  margin-top: 30rem;
+  margin-left: 20rem;
+  width: 250px;
 }

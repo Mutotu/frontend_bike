@@ -10,11 +10,11 @@
   display: inline-block;
   float: center;
   clear: left;
-  width: 20px;
+  width: 25px;
   text-align: right;
   margin-right: 5rem;
 }
 
 .signup {
-  margin: -10rem;
+  margin: 20rem;
 }

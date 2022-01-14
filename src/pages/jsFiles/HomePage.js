@@ -26,10 +26,10 @@ const HomePage = (props) => {
   };
   const noUser = () => {
     return (
-      <div className='home-form'>
+      <div className='noUser-form'>
         {bikes.map((item, i) => {
           return (
-            <ul key={item.id} className='home-card'>
+            <ul key={item.id} className='noUser-card'>
               <li>
                 <div>
                   <div>
