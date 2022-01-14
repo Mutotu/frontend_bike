@@ -176,10 +176,10 @@ const HomePage = (props) => {
             {posts.length > 0 ? (
               display()
             ) : (
-              <p>
+              <h2>
                 If you'd like to rent out your motorcycle, just go to page "Post
                 Bikes" Or go to all rentals page to rent a bike
-              </p>
+              </h2>
             )}
           </div>
         ) : (

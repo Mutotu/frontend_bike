@@ -30,8 +30,9 @@ const SingleBikePage = (props) => {
   // console.log(profile.data.moto.make);
   const display = () => {
     return (
-      <>
+      <div className='single-page-display'>
         <button
+          className='single-page-bt'
           onClick={() => {
             navigate("/allbikes");
           }}
@@ -39,8 +40,8 @@ const SingleBikePage = (props) => {
           Go back to bikes
         </button>
         <div>
-          {/* <h3>Comments on {profile.data.moto.make}</h3>
-          <p>{profile.data.moto.photo}</p> */}
+          {/* <h3>Comments on {profile.data.moto.make}</h3> */}
+          {/* <p>{profile.data.moto.photo}</p> */}
         </div>
         <div>
           {moto.map((item, i) => {
@@ -54,7 +55,7 @@ const SingleBikePage = (props) => {
             );
           })}
         </div>
-      </>
+      </div>
     );
   };
 

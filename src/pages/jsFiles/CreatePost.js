@@ -13,11 +13,22 @@ const CreatePost = (props) => {
   const [price, setPrice] = useState("");
   const [description, setDescription] = useState("");
   const navigation = useNavigate();
+  const [photoBool, setPhotoBool] = useState(false);
 
+  const check_url = () => {
+    if (photo.startsWith("http")) {
+      setPhotoBool(false);
+    } else {
+      setPhotoBool(true);
+    }
+  };
+  useEffect(() => {
+    check_url();
+  }, [photo]);
   const submitEventInfo = async (e) => {
     e.preventDefault();
     let user_id = localStorage.getItem("userId");
-    // console.log(env);
+
     if (user_id) {
       axios
         .post(
@@ -46,6 +57,7 @@ const CreatePost = (props) => {
   return (
     <div className='create-form'>
       <form onSubmit={submitEventInfo} className='myForm'>
+        <div>{photoBool && <p>Please enter a correct photo url...</p>}</div>
         <div>
           <label htmlFor='photo'>Photo: </label>
 

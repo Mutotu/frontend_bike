@@ -1,0 +1,13 @@
+.card {
+  margin-top: 30rem;
+  float: center;
+}
+
+.single-page-bt {
+  width: 9rem;
+  margin-bottom: 1rem;
+}
+.single-page-display {
+  width: 50%;
+  margin: 0 auto;
+}

@@ -48,11 +48,22 @@ const AllBikes = (props) => {
                   <Link to={`${item.id}`}>
                     Click to see the comments on <h3>{item.make}</h3>
                   </Link>
-                  <h4>Description: {item.description}</h4>
+                  <h4>
+                    <span>Make: </span> {item.make}
+                  </h4>
+                  <h4>
+                    <span>Description:</span> {item.description}
+                  </h4>
 
-                  <h4>Model: {item.model}</h4>
-                  <h4>Daily Price ${item.price}</h4>
-                  <h4>Year: {item.year}</h4>
+                  <h4>
+                    <span>Model:</span> {item.model}
+                  </h4>
+                  <h4>
+                    <span>Daily Price:</span> ${item.price}
+                  </h4>
+                  <h4>
+                    <span>Year:</span> {item.year}
+                  </h4>
                   <img src={item.photo} alt={item.model}></img>
                   <a
                     href={`mailto: ${owner.email}`}
@@ -66,7 +77,9 @@ const AllBikes = (props) => {
               </div>
             </li>
             <div>
-              <Link to={`/onebike/${item.id}`}>Rent</Link>
+              <Link to={`/onebike/${item.id}`} className='rent-link'>
+                Rent
+              </Link>
             </div>
           </ul>
         );

@@ -44,3 +44,7 @@ h2 {
 .welcome {
   margin-top: 3rem;
 }
+
+.home-card > img {
+  width: auto;
+}

@@ -173,6 +173,7 @@ import env from "react-dotenv";
 import Overlay from "react-bootstrap/Overlay";
 
 const MySavedRentedBikes = (props) => {
+  const navigate = useNavigate();
   const [myrented, setMyRented] = useState([]);
   const [comment, setComment] = useState("");
   const [title, setTitle] = useState("");
@@ -204,12 +205,12 @@ const MySavedRentedBikes = (props) => {
       const motoDetails = await axios.get(
         `${env.BACKEND_URL}/motorcycle/${myrented[i].moto_id}`
       );
-      console.log(motoDetails);
+      // console.log(motoDetails);
       motosCopy[i].motoPhoto = motoDetails.data.moto.photo;
       // motosCopy[i].motoIdRetrived = motoDetails.data.moto.id;
     }
     setMyRented(motosCopy);
-    console.log(myrented);
+    // console.log(myrented);
   };
   useEffect(() => {
     motos();
@@ -217,7 +218,7 @@ const MySavedRentedBikes = (props) => {
   const submitEventInfo = async (e) => {
     e.preventDefault();
     let user_id = localStorage.getItem("userId");
-    console.log(motoId);
+    // console.log(motoId);
     try {
       const submitComment = await axios.post(
         `${env.BACKEND_URL}/comment/${user_id}/${motoId}`,
@@ -268,7 +269,6 @@ const MySavedRentedBikes = (props) => {
             onSubmit={() => {
               setComment("");
               setTitle("");
-              // setDisplayForm(false);
             }}
           />
           <button
@@ -279,7 +279,7 @@ const MySavedRentedBikes = (props) => {
               setShowForm(false);
             }}
           >
-            Done
+            Close
           </button>
         </form>
       </div>
@@ -289,28 +289,37 @@ const MySavedRentedBikes = (props) => {
   const display = () => {
     return (
       <div>
+        <button
+          onClick={() => {
+            navigate("/allbikes");
+          }}
+        >
+          Back to All Rentals
+        </button>
         {myrented.map((item, i) => {
           return (
-            <div key={item.id} className='card-rent'>
-              <ul>
-                <li>
-                  <img src={item.motoPhoto} alt={item.motoPhoto}></img>
-                </li>
-                <li>Start date: {item.start_date}</li>
-                <li>End date: {item.end_date}</li>
-                <li>Total paid ${item.total_price}</li>
-              </ul>
-              <button
-                onClick={() => {
-                  setDisplayForm(true);
-                  setMotoId(item.moto_id);
-                  // console.log(item.id, "item id");
-                  setShowForm(true);
-                }}
-              >
-                Add comment
-              </button>
-            </div>
+            <>
+              <div key={item.id} className='card-rent'>
+                <ul>
+                  <li>
+                    <img src={item.motoPhoto} alt={item.motoPhoto}></img>
+                  </li>
+                  <li>Start date: {item.start_date}</li>
+                  <li>End date: {item.end_date}</li>
+                  <li>Total paid ${item.total_price}</li>
+                </ul>
+                <button
+                  onClick={() => {
+                    setDisplayForm(true);
+                    setMotoId(item.moto_id);
+                    // console.log(item.id, "item id");
+                    setShowForm(true);
+                  }}
+                >
+                  Add comment
+                </button>
+              </div>
+            </>
           );
         })}
       </div>
